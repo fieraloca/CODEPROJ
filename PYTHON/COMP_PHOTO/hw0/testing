@@ -1,0 +1,13 @@
+
+import numpy as np
+import cv2
+
+image = cv2.imread('C:\PROJECTS\COMPUTATIONAL PHOTOGRAPHY\Homework\HW0\images\part2\kitten.jpg')
+
+red = image[:,:,2]
+green = image[:,:,1]
+blue = image[:,:,0]
+output = np.ones([image.shape[0],image.shape[1]],dtype = np.float32)
+output = (0.33333*red + 0.33333*green + 0.33333*blue)
+       
+cv2.imwrite('C:\PROJECTS\COMPUTATIONAL PHOTOGRAPHY\Homework\HW0\images\part2\mybw.jpg',output.astype('float'))
